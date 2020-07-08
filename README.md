@@ -1,2 +1,2 @@
 # Angular-Project-Tracker
-Angular project tracker
+Please find project tracker related files in \app\projects
