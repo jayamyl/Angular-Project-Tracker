@@ -1,0 +1,23 @@
+<p>
+  <a [routerLink]="['/addproject']">Create New Project</a>
+</p>
+<section class="sort">
+  <label for="">Order By :</label>
+  <select (change)="sortAttr = $event.target.value">
+    <option value="name">Project Name</option>
+  </select>
+  <label for="">Descending ? :</label>
+  <input type="checkbox" (change)="sortDesc = $event.target.checked" />
+</section>
+<section class="list">
+  <ol>
+    <li *ngFor="let project of projects | sort: sortAttr:sortDesc">
+      <span class="projectname">
+        {{ project.name | trimText: 40 }}
+      </span>
+      <div>
+        <a href="javascript:void(0)" (click)="onRemoveClick(project)">Remove</a>
+      </div>
+    </li>
+  </ol>
+</section>
